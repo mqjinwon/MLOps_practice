@@ -25,17 +25,17 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      - name: Move to 01 test directory
-        run: cd 01test
-
-      - name: Install dependencies
+      - name: Install
         run: |
+          cd 01test
           make install
       
       - name: Lint
         run: |
+          cd 01test
           make lint
       
       - name: Test
         run: |
+          cd 01test
           make test
